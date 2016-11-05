@@ -1,0 +1,5 @@
+idea-codecollaborator.iml
+.idea/
+out/
+*.class
+*.jar
