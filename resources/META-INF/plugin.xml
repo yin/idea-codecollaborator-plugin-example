@@ -1,22 +1,20 @@
 <idea-plugin version="2">
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
-  <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <id>com.solarwinds.gagyi.matej.idea.ccollab</id>
+  <name>Collaborator Review Dashboard Manager Buzzword Framework Toolset</name>
+  <version>0.1</version>
+  <vendor email="matej.gagyi@solarwinds.com" url="http://www.solarwinds.com">Matej 'Yin' Gagyi</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      Shows Code Collaborator diff files in compare dialog.
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      Unzips *.collabdiff file and shows compare dialog for the changeset
     ]]>
   </change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="141.0"/>
+  <idea-version since-build="150.0"/>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -29,19 +27,18 @@
   </extensions>
 
   <actions>
-    <group id="compare" description="Compare">
+    <group id="ccollab-group" text="Collaborator">
       <add-to-group group-id="MainMenu"/>
-      <action class="ShowCompareViewAction" id="showCompare"></action>
+      <action id="DirectoryCompare_FromProjectPanel"
+              class="ShowCompareViewAction"
+              text="Open a *.collabdiff file"
+              description="Invokes the Compare view">
+        <add-to-group group-id="ProjectViewPopupMenu"   anchor="after" relative-to-action="CompareTwoFiles" />
+        <add-to-group group-id="FavoritesViewPopupMenu" anchor="after" relative-to-action="CompareTwoFiles" />
+        <add-to-group group-id="ScopeViewPopupMenu"     anchor="after" relative-to-action="CompareTwoFiles" />
+        <add-to-group group-id="CommanderPopupMenu"     anchor="after" relative-to-action="CompareTwoFiles" />
+      </action>
     </group>
-    <action id="DirectoryCompare_FromProjectPanel"
-            class="ShowCompareViewAction"
-            text="Do the _Fucking compare"
-            description="Invokes the Compare view">
-      <add-to-group group-id="ProjectViewPopupMenu"   anchor="after" relative-to-action="CompareTwoFiles" />
-      <add-to-group group-id="FavoritesViewPopupMenu" anchor="after" relative-to-action="CompareTwoFiles" />
-      <add-to-group group-id="ScopeViewPopupMenu"     anchor="after" relative-to-action="CompareTwoFiles" />
-      <add-to-group group-id="CommanderPopupMenu"     anchor="after" relative-to-action="CompareTwoFiles" />
-    </action>
   </actions>
 
 </idea-plugin>
