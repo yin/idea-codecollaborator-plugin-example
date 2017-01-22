@@ -1,0 +1,6 @@
+idea-codecollaborator-plugin-example
+====================================
+
+Just a try at creating a stupid idea plugin. As this needs fancy configuration according
+to [Idea's tutorial](http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started.html),
+I sepatated this out from my [code-examples](https://github.com/yin/code-examples).
